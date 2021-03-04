@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "479421837568",
+    "project_id": "oplop-fb755",
+    "storage_bucket": "oplop-fb755.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479421837568:android:4c02800e703962a05903e5",
+        "android_client_info": {
+          "package_name": "com.example.oplop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "479421837568-tii845b2p6vr2efcoe53cmqsl5dsqo7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV5Hew9rVxM-wwDSqIU8cWDNlfv5-yOKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "479421837568-tii845b2p6vr2efcoe53cmqsl5dsqo7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
