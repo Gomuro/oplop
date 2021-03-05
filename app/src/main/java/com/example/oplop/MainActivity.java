@@ -3,6 +3,8 @@ package com.example.oplop;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText mEditTextMessage;
     Button mSendButton;
+    RecyclerView mMessagesRecycler;
 
     ArrayList<String> messages = new ArrayList<>();
 
@@ -39,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
         mSendButton = findViewById(R.id.send_message_b);
         mEditTextMessage = findViewById(R.id.message_input);
+        mMessagesRecycler = findViewById(R.id.message_recycler);
+
+        mMessagesRecycler.setLayoutManager(new LinearLayoutManager(this));
+
+        DataAdapter dataAdapter = new DataAdapter(this,messages);
+
+        mMessagesRecycler.setAdapter(dataAdapter);
 
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 String msg = snapshot.getValue(String.class);
                 messages.add(msg);
+                dataAdapter.notifyDataSetChanged();
+                mMessagesRecycler.smoothScrollToPosition(messages.size());
             }
 
             @Override
